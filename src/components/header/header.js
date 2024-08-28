@@ -2,7 +2,7 @@ import "./header.scss";
 
 import React, { Component } from "react";
 
-import logo from "./logo.png"
+import logo from "./img/logo.png"
 
 export default class Header extends Component {
     render () {
