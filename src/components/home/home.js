@@ -28,7 +28,7 @@ const Home = () => {
                     <div className="home__card card">
                         <img className="card__logo" src={filesLogo} alt="freza-logo"/>
                         <h3 className="card__title">Проектирование</h3>
-                        <p className="card__description">Услуги по подготовке фейлов к производству</p>
+                        <p className="card__description">Услуги по подготовке фaйлов к производству</p>
                         <p className="card__link" href="#">Подробнее</p>
                     </div>
                     <div className="home__card card">

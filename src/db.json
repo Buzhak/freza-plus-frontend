@@ -1,0 +1,35 @@
+{
+	"menu": [
+		{
+			"title": "Главная",
+			"text": "",
+			"services": ""
+		},
+		{
+			"title": "Фрезерная резка",
+			"text": "",
+			"services": ""
+		},
+		{
+			"title": "Лазерная резка",
+			"text": "",
+			"services": ""
+		},
+		{
+			"title": "Цены",
+			"text": "",
+			"services": ""
+		},
+		{
+			"title": "Заказать",
+			"text": "",
+			"services": ""
+		},
+		{
+			"title": "Контакты",
+			"text": "",
+			"services": ""
+		}
+		
+	]
+}
