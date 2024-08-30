@@ -1,10 +1,10 @@
 import "./home.scss";
 
 import React from "react";
-import contectsLogo from "./img/contacts_logo.jpg"
-import filesLogo from "./img/files_logo.jpg"
-import frezaLogo from "./img/freza_logo.jpg"
-import laserLogo from "./img/laser_logo.jpg"
+import contectsLogo from "./img/contacts_logo.jpg";
+import filesLogo from "./img/files_logo.jpg";
+import frezaLogo from "./img/freza_logo.jpg";
+import laserLogo from "./img/laser_logo.jpg";
 
 const Home = () => {
     return (
