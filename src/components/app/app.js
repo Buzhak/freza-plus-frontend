@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React, { Component } from "react";
 
 import Header from "../header";
@@ -8,11 +9,15 @@ export default class App extends Component {
     render() {
         return (
             <>
-                <Header />
-                <main>
-                    <Home />
-                    <MaterialPage />
-                </main>
+                <BrowserRouter>
+                    <Header />
+                    <main>
+                        <Routes>
+                            <Route path='/' element={<Home />}/>
+                            <Route path='/services/:id' element={<MaterialPage />}/>
+                        </Routes>
+                    </main>
+                </BrowserRouter>
             </>
         )
     }
