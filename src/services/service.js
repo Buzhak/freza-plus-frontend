@@ -25,5 +25,10 @@ export default class ApiService {
         
         return adresses;
     }
+    getMaterial = async (id) => {
+        const material = await this.getResource(`/services/${id}`)
+        
+        return material;
+    }
 }
 

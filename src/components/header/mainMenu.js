@@ -1,4 +1,4 @@
-import Base from "./base";
+import Base from "../base/base";
 import {Link} from 'react-router-dom';
 import React from "react";
 

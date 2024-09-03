@@ -1,4 +1,4 @@
-import Base from "./base";
+import Base from "../base/base";
 import React from "react";
 
 export default class Adresses extends Base {
