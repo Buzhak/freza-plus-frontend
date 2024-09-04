@@ -3,6 +3,7 @@ import "./materialPage.scss";
 import ApiService from "../../services/service";
 import Base from "../base/base";
 import React from "react";
+import Table from "./table";
 import acrilImg from "./img/akril.jpg";
 import { useParams } from "react-router-dom";
 
@@ -27,7 +28,7 @@ class MaterialPage extends Base {
     componentDidUpdate(prevProps) {
         if (prevProps.id !== this.props.id) {
             this.loadData();
-        }
+        }   
     }
     
     componentDidMount = () => {
@@ -37,8 +38,46 @@ class MaterialPage extends Base {
     }
 
     render() {
-        const {data} = this.state;
+        const { loading, error, data } = this.state;
+
+        if (loading) {
+            return <p>Loading...</p>;
+        }
+
+        if (error) {
+            return <p className="error">Error loading menu. Please try again later.</p>;
+        }
+
+        let table,
+            description,
+            warning;
+            
+        if (data.table) {
+            table = <>
+                    <Table table={data.table}/>
+                <div className="container__warning-info">
+                    Каждый заказ рассчитывается индивидуально, после того, как мы увидим Ваш файл.
+                </div>
+            </>
+        }
+
+        if (data.warning) {
+            warning = <p className="container__warning-text" dangerouslySetInnerHTML={{ __html: data.warning }} />
+        }
+
+        const description_template = <>
+            <p className="container__description-info"  dangerouslySetInnerHTML={{ __html: data.description }} />
+            {warning}
+        </>
         
+        if (!data.table && data.description) {
+            table = description_template;
+        } else {
+            description = <div className="container__description">
+                {description_template}
+            </div>
+        }
+
         return (
             <div className="container">
                 <div className="container__body">
@@ -52,46 +91,10 @@ class MaterialPage extends Base {
                     </div>
                     <div className="container__info-box">
                         <h2 className="container__title">{data.title}</h2>
-                        <table className="container__info-table info-table">
-                            <tbody>
-                                <tr>
-                                    <th>Толщина материала, мм.</th>
-                                    <th>Стоимость резки за 1 м.п., руб.</th>
-                                </tr>
-                                <tr>
-                                    <td>1 — 2</td>
-                                    <td>От 10</td>
-                                </tr>
-                                <tr>
-                                    <td>3 — 4</td>
-                                    <td>От 20</td>
-                                </tr>
-                                <tr>
-                                    <td>5 — 6</td>
-                                    <td>От 35</td>
-                                </tr>
-                                <tr>
-                                    <td>8 — 10</td>
-                                    <td>От 60</td>
-                                </tr>
-                                <tr>
-                                    <td>12 — 15</td>
-                                    <td>От 90</td>
-                                </tr>
-                                <tr>
-                                    <td>20</td>
-                                    <td>От 110</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div className="container__warning-info">
-                            Каждый заказ рассчитывается индивидуально, после того, как мы увидим Ваш файл.
-                        </div>
+                        {table}
                     </div>
                 </div>
-                <div className="container__description">
-                    <p dangerouslySetInnerHTML={{ __html: data.description }} />
-                </div>
+                {description}
             </div>
         )
     }
