@@ -14,9 +14,6 @@
         margin: 0 10px;
         cursor: pointer;
     }
-    &__navbar {
-        margin: 5px 0 20px 0;
-    }
 }
 
 .contact {
@@ -49,13 +46,10 @@
     justify-content: space-around;
     &__item {
         cursor: pointer;
-        padding: 2px 20px;
+        padding: 10px 20px;
         border-radius: 0 0 10px 10px;
         position: relative;
-        &:hover {
-            color: #db545a;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
+        
         &:hover .navbar__dropdown {
             display: block;
             max-height: 1000px; 
@@ -63,6 +57,10 @@
     }
     &__link {
         text-decoration: none;
+        &:hover {
+            color: #db545a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
     }
     &__dropdown {
         display: block;

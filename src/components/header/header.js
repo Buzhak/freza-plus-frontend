@@ -1,7 +1,8 @@
 import "./header.scss";
 
-import Adresses from "./adress";
+import Addresses from "./address";
 import ApiService from "../../services/service";
+import {Link} from 'react-router-dom';
 import MainMenu from "./mainMenu";
 import logo from "./img/logo.png"
 
@@ -13,9 +14,11 @@ const Header = () => {
     return (
         <header className="header">
             <div className="header__top">
-                <img className="header__logo" src={logo} alt="logo"/>
+                <Link to="">
+                    <img className="header__logo" src={logo} alt="logo"/>
+                </Link>
                 <div className="header__contact contact">
-                    <Adresses service={getAdresses}/>
+                    <Addresses service={getAdresses}/>
                 </div>
             </div>
             <nav className="header__navbar navbar">

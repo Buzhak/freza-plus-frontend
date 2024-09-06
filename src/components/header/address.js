@@ -1,14 +1,14 @@
 import Base from "../base/base";
 import React from "react";
 
-export default class Adresses extends Base {
+export default class Addresses extends Base {
     renderAdresses(adresses) {
         return adresses.map(({id, title, phone, email}) => {
             return (
                 <div key={id} className="contact__item">
                     <p className="contact__title">{title}</p>
-                    <a className="contact__phone" href="tel:+79164725005">{phone}</a>
-                    <a className="contact__email" href="mailto:vozmislovo@yandex.ru">{email}</a>
+                    <a className="contact__phone" href={`tel:${phone}`}>{phone}</a>
+                    <a className="contact__email" href={`mailto:${email}`}>{email}</a>
                 </div> 
             )
         });

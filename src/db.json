@@ -118,13 +118,17 @@
 			"id": 1,
 			"title": "Фрезерная резка",
 			"phone": "+79263428855",
-			"email": "Frezaplus@yandex.ru"
+			"email": "Frezaplus@yandex.ru",
+			"address": "г. Химки, Местный проезд 4/11",
+			"workTime": "ПН-СБ, с 10:00 до 19:00"
 		},
 		{	
 			"id": 2,
 			"title": "Лазерная резка",
 			"phone": "+79164725005",
-			"email": "vozmislovo@yandex.ru"
+			"email": "vozmislovo@yandex.ru",
+			"address": "г. Химки, Местный проезд 4/11",
+			"workTime": "ПН-СБ, с 10:00 до 19:00"
 		}
 	],
 	"services": [

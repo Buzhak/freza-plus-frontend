@@ -1,30 +1,69 @@
 .footer {
     background-color: white;
     &__container{
-        padding: 20px 0 20px 0;
+        padding: 40px 0 0 0;
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        width: 1140px;
+        max-width: 1140px;
         min-height: 200px;
         gap: 30px;
+        color: rgb(53, 53, 53);
     }
     &__services {
         display: flex;
         gap: 30px;
+        &-title {
+            margin-bottom: 20px;
+        }
+        &-list {
+            margin-bottom: 30px;
+        }
+        &-item {
+            list-style-type: none;
+            line-height: 200%;
+            color: #595e81;
+            &-title,
+            &-phone,
+            &-email,
+            &-link {
+                margin-right: 10px;
+                display: inline;
+                text-decoration: none;
+                color: #595e81;
+            }
+            &-phone,
+            &-email {
+                cursor: pointer;
+                &:hover {
+                    color: #db545a;
+                    text-decoration: underline;
+                }
+            }
+            &-link:hover {
+                color: #db545a;
+            }
 
+        }
+        &-info {
+            color: #595e81;
+            margin-bottom: 30px;
+        }
     }   
-    &__services-title {
-        margin-bottom: 20px;
-    }
-    &__services-item {
-        list-style-type: none;
-    }
+
     &__end {
         margin: 20px auto;
-        width: 1140px;
+        max-width: 1140px;
     }
     &__c {
         text-align: center;
     }
-} 
+}
+
+
+@media (max-width: 1140px) {
+    .footer__container {
+        flex-direction: column;
+        margin-left: 50px
+    }
+}
