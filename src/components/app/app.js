@@ -15,7 +15,8 @@ export default class App extends Component {
                     <main>
                         <Routes>
                             <Route path='/' element={<Home />}/>
-                            <Route path='/services/:id' element={<MaterialPage />}/>
+                            <Route path='/freza/:id' element={<MaterialPage />}/>
+                            <Route path='/laser/:id' element={<MaterialPage />}/>
                         </Routes>
                     </main>
                     <Footer />  

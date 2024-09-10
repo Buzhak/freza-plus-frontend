@@ -30,5 +30,11 @@ export default class ApiService {
         
         return material;
     }
+
+    getHome = async () => {
+        const home = await this.getResource("/home");
+        
+        return home;
+    }
 }
 

@@ -10,7 +10,7 @@ export default class MainMenu extends Base {
                 dropMenu = (
                     <div className="navbar__dropdown">
                         {item.services.map((service) => (
-                            <Link to={`${item.url}${service.id}`} className="navbar__link" key={service.id}>
+                            <Link to={`${item.slug}/${service.id}`} className="navbar__link" key={service.id}>
                                 <p key={service.id} className="navbar__dropdown-item">{service.title}</p>
                             </Link>
                         ))}
@@ -19,7 +19,7 @@ export default class MainMenu extends Base {
             }
             return (
                 <div className="navbar__item" key={item.id}>
-                    <Link to={item.url} className="navbar__link">{item.title}</Link>
+                    <Link to={`${item.slug}`} className="navbar__link">{item.title}</Link>
                     {dropMenu}
                 </div>    
             );
