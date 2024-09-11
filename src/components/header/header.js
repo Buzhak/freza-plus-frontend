@@ -8,7 +8,7 @@ import logo from "./img/logo.png"
 
 const Header = () => {
     const service = new ApiService();
-    const getMainMenu = () => service.getMainMenu();
+    const getRoutes = () => service.getRoutes();
     const getAdresses = () => service.getAdresses();
 
     return (
@@ -22,7 +22,7 @@ const Header = () => {
                 </div>
             </div>
             <nav className="header__navbar navbar">
-                <MainMenu service={getMainMenu} />
+                <MainMenu service={getRoutes} />
             </nav>
         </header>
     )

@@ -14,12 +14,7 @@ export default class ApiService {
         
         return await res.json();
     }
-
-    getMainMenu = async () => {
-        const meinMenuItems = await this.getResource("/menu");
-        
-        return meinMenuItems;
-    }
+    
     getAdresses = async () => {
         const adresses = await this.getResource("/adress");
         
@@ -35,6 +30,12 @@ export default class ApiService {
         const home = await this.getResource("/home");
         
         return home;
+    }
+
+    getRoutes = async () => {
+        const routes = await this.getResource("/routes");
+        
+        return routes;
     }
 }
 
