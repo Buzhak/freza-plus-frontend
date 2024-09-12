@@ -14,7 +14,7 @@ export default class Services extends Base {
                         <ul>
                             {item.services.map((service) => (
                                 <li className="footer__services-item" key={service.id}>
-                                    <Link to={`${item.url}${service.id}`} className="footer__services-item-link">
+                                    <Link to={`${item.slug}/${service.id}`} className="footer__services-item-link">
                                         {service.title}
                                     </Link>
                                 </li>

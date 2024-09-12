@@ -6,8 +6,8 @@ import Footer from '../footer';
 import Header from "../header";
 import Home from "../home";
 import MaterialPage from "../materialPage";
+import PageContent from '../pageContent';
 import React from "react";
-import ServicePage from '../servicePage';
 
 export default class App extends Base {
     
@@ -19,19 +19,22 @@ export default class App extends Base {
 
     renderRoutes = (data) => {
         return data.reduce((accumulator, route) => {
-            if (route.slug === '') {
-                    accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<Home />}/>);
-                    return accumulator;
-                }
-            accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<ServicePage />}/>);
+            // if (route.slug === '') {
+            //     accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<Home />}/>);
+            //     return accumulator;
+            // }
+            accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<PageContent id={route.id}/>}/>);
+
             if (route.services && route.services.length !== 0) {
-                accumulator.push(<Route key={`a${route.id}`} path={`/${route.slug}/:id`} element={<MaterialPage />}/>);
+                accumulator.push(<Route key={`a${route.id}`} path={`/${route.slug}/:id`} element={<MaterialPage/>}/>);
             }
             return accumulator;
         }, [])
     }
+
     render() {
         const { loading, error, data } = this.state;
+
         if (loading) {
             return <p>Loading...</p>;
         }
@@ -41,16 +44,13 @@ export default class App extends Base {
             return <p className="error">Error loading menu. Please try again later.</p>;
         }
         console.log(this.renderRoutes(data));
-        
+
         return (
             <>
                 <BrowserRouter>
                     <Header />
                     <main>
                         <Routes>
-                            {/* <Route path='/' element={<Home />}/>
-                            <Route path='/freza/:id' element={<MaterialPage />}/>
-                            <Route path='/laser/:id' element={<MaterialPage />}/> */}
                             {this.renderRoutes(data)}
                         </Routes>
                     </main>

@@ -37,5 +37,11 @@ export default class ApiService {
         
         return routes;
     }
+
+    getPage = async (id) => {
+        const page = await this.getResource(`/routes/${id}`)
+        
+        return page;
+    }
 }
 
