@@ -2,6 +2,7 @@ import "./pageContent.scss";
 
 import ApiService from "../../services/service";
 import Base from "../base/base";
+import Home from "../home";
 import React from "react";
 
 export default class PageContent extends Base {
@@ -38,12 +39,22 @@ export default class PageContent extends Base {
             return <p className="error">Error loading adresses</p>;
         }
 
+        let advancedContent = null;
+
+        if (data.slug === '') {
+            advancedContent = <Home />
+        }
+
         return (
-            <div className="main-content">
+            <>
+                {advancedContent}
+                <div className="main-content">
                     <div className="main-content__container">
                         <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.description }}/>
                     </div>
-            </div>
+                </div>
+            </>
+
         )
     }
 }

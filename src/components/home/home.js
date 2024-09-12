@@ -1,7 +1,5 @@
 import "./home.scss";
 
-import ApiService from "../../services/service";
-import PageContent from "../pageContent";
 import React from "react";
 import contectsLogo from "./img/contacts_logo.jpg";
 import filesLogo from "./img/files_logo.jpg";
@@ -9,11 +7,6 @@ import frezaLogo from "./img/freza_logo.jpg";
 import laserLogo from "./img/laser_logo.jpg";
 
 const Home = () => {
-    const service = new ApiService();
-    const getHome = () => service.getHome();
-    console.log("open Home page");
-    
-
     return (
         <>
             <div className="home">
@@ -48,7 +41,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <PageContent service={getHome}/>
         </>
     )
 }
