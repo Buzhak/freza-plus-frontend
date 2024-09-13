@@ -1,31 +1,21 @@
 import "./pageContent.scss";
 
-import ApiService from "../../services/service";
-import Base from "../base/base";
-import Home from "../home";
+import GetPage from "../base/getPage";
+import {Link} from 'react-router-dom';
 import React from "react";
 
-export default class PageContent extends Base {
-    componentDidUpdate(prevProps) {
-        if (prevProps.id !== this.props.id) {
-            this.loadData();
-        }   
-    }
-
-    loadData = () => {
-        if (typeof this.service === 'function') {
-            this.service(this.props.id)
-                .then(this.onDataLoaded)
-                .catch(this.onError);
-        } else {
-            console.error("Service is not a function");
-        }
-    }
-
-    componentDidMount = () => {
-        const service = new ApiService();
-        this.service = service.getPage;
-        this.loadData();
+export default class PageContent extends GetPage {
+    
+    renderServicesList (data) {
+        return data.services.map((service) => {
+            return(
+                <li className="main-content__item" key={service.id}>
+                    <Link to={`${service.id}`} className="main-content__link" key={service.id}>
+                            {service.title}
+                    </Link>
+                </li> 
+            )
+        })
     }
 
     render() {
@@ -39,18 +29,15 @@ export default class PageContent extends Base {
             return <p className="error">Error loading adresses</p>;
         }
 
-        let advancedContent = null;
-
-        if (data.slug === '') {
-            advancedContent = <Home />
-        }
-
         return (
             <>
-                {advancedContent}
                 <div className="main-content">
                     <div className="main-content__container">
                         <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.description }}/>
+                        <ul className="main-content__list">
+                            {this.renderServicesList(data)}
+                        </ul>
+                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.extended_description }}/>
                     </div>
                 </div>
             </>

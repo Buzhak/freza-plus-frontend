@@ -20,4 +20,19 @@
     p {
         line-height: 1.8;
     }
+    ul {
+        margin: 20px 0;
+    }
+    li {
+        margin-left: 40px;
+        line-height: 1.8;
+    }
+    &__link {
+        text-decoration: none;
+        color: rgb(53, 53, 53);
+        &:hover {
+            color: #db545a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    }
 }
