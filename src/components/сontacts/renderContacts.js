@@ -1,4 +1,4 @@
-import "./renderContacts.scss";
+import "./contacts.scss";
 
 import React from "react";
 

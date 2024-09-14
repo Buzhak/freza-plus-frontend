@@ -1,6 +1,6 @@
 import Base from "../../base/base";
 import React from "react";
-import renderContacts from "../../renderContatcts"
+import { renderContacts } from "../../сontacts"
 
 export default class Address extends Base {
     render () {

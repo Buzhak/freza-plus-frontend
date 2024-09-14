@@ -1,11 +1,14 @@
 .contact-item {
     list-style-type: none;
     line-height: 200%;
+    display: flex;
+    flex-wrap: wrap;
+
     &__title,
     &__phone,
     &__email,
     &__link {
-        margin-right: 10px;
+        margin: 0 10px 0 0;
         display: inline;
         text-decoration: none;
     }
@@ -21,4 +24,8 @@
     &__link:hover {
         color: #db545a;
     }
+}
+
+.address__list {
+    padding: 0;
 }

@@ -1,6 +1,6 @@
 import Base from "../base/base";
 import React from "react";
-import renderContacts from "../renderContatcts"
+import { renderContacts } from "."
 
 export default class Address extends Base {
     render () {
@@ -19,13 +19,13 @@ export default class Address extends Base {
               workTime = data[0].workTime;
 
         return (
-            <div className="footer__address">
-                <h3 className="footer__services-title">Контакты</h3>
-                <ul className="footer__services-list">{contacts}</ul>
-                <h3 className="footer__services-title">Адрес</h3>
-                <p className="footer__services-info">{address}</p>
-                <h3 className="footer__services-title">График работы</h3>
-                <p className="footer__services-info">{workTime}</p>
+            <div className="address">
+                <h3 className="address__title">Контакты</h3>
+                <ul className="address__list">{contacts}</ul>
+                <h3 className="address__title">Адрес</h3>
+                <p className="address__info">{address}</p>
+                <h3 className="address__title">График работы</h3>
+                <p className="address__services-info">{workTime}</p>
             </div> 
         )
     }

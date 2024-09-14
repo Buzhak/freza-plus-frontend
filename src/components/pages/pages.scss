@@ -72,6 +72,12 @@
 .main-content {
     background-color: #E5E5E5;
     padding: 50px 0 50px 0;
+    &__map-container{
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        overflow: hidden;
+    }
     &__container {
         margin: 0 auto;
         max-width: 1140px;
@@ -80,6 +86,7 @@
         border-radius: 30px;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
         box-sizing: border-box;
+        overflow: hidden;
     }
     &__container-title-main,
     &__container-title-sec {
@@ -133,3 +140,9 @@
     }
 }
 
+@media (max-width: 650px) {
+    .main-content__map-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

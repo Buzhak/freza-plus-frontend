@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home, OrderPage, ServicePage } from '../pages/index';
+import { ContactPage, Home, OrderPage, ServicePage } from '../pages/index';
 
 import ApiService from "../../services/service";
 import Base from '../base/base';
@@ -24,6 +24,10 @@ export default class App extends Base {
             }
             if (route.slug === 'order') {
                 accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<OrderPage id={route.id}/>}/>);
+                return accumulator;
+            }
+            if (route.slug === 'contacts') {
+                accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<ContactPage id={route.id}/>}/>);
                 return accumulator;
             }
             if (route.services && route.services.length !== 0) {

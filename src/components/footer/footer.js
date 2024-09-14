@@ -1,6 +1,6 @@
 import "./footer.scss";
 
-import Address from "./addresses";
+import Address from "../сontacts/addresses";
 import ApiService from "../../services/service";
 import React from "react";
 import Services from "./services";
