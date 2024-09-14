@@ -1,7 +1,6 @@
 .contact-item {
     list-style-type: none;
     line-height: 200%;
-    color: #595e81;
     &__title,
     &__phone,
     &__email,
@@ -9,11 +8,11 @@
         margin-right: 10px;
         display: inline;
         text-decoration: none;
-        color: #595e81;
     }
     &__phone,
     &__email {
         cursor: pointer;
+        color: #595e81;
         &:hover {
             color: #db545a;
             text-decoration: none;

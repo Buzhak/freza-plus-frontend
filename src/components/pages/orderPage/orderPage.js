@@ -6,6 +6,7 @@ import GetPage from "../../base/getPage";
 import React from "react";
 
 export default class OrderPage extends GetPage{
+
     render() {
         const { loading, error, data} = this.state;
         const service = new ApiService();
@@ -27,6 +28,7 @@ export default class OrderPage extends GetPage{
                     <Address service={contacts}/>
                     <h3 className="main-content__container-title-sec">{ data.content_extended_title }</h3>
                     <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.content_extended_description }}/>
+                    <div className="main-content__container-warning warning-text" dangerouslySetInnerHTML={{ __html: data.content_warging }}/>
                 </div>
             </div>
         )

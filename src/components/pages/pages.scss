@@ -84,6 +84,7 @@
     &__container-title-main,
     &__container-title-sec {
         color: rgb(53, 53, 53);
+        margin: 0 0 30px 0;
     }
     &__container-title-sec {
         margin-top: 30px;
@@ -106,6 +107,9 @@
     &__address-list {
         margin: 0;
         padding: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #4E589C;
     }
     &__link {
         text-decoration: none;
@@ -115,9 +119,17 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
     }
+    &__container-order-link {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #4E589C;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+            color: #db545a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }  
+    }
 }
 
-.warning-text {
-	margin-top: 20px;
-	background-color: rgb(245, 245, 235);
-}
