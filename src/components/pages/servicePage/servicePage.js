@@ -1,10 +1,10 @@
-import "./pageContent.scss";
+import "../pages.scss";
 
-import GetPage from "../base/getPage";
+import GetPage from "../../base/getPage";
 import {Link} from 'react-router-dom';
 import React from "react";
 
-export default class PageContent extends GetPage {
+export default class ServicePage extends GetPage {
     
     renderServicesList (data) {
         return data.services.map((service) => {
@@ -33,11 +33,14 @@ export default class PageContent extends GetPage {
             <>
                 <div className="main-content">
                     <div className="main-content__container">
-                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.description }}/>
+                        <h2 className="main-content__container-title-main">{ data.content_main_title }</h2>
+                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.content_description }}/>
                         <ul className="main-content__list">
                             {this.renderServicesList(data)}
                         </ul>
-                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.extended_description }}/>
+                        <h3 className="main-content__container-title-sec">{ data.content_extended_title }</h3>
+                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.content_extended_description }}/>
+                        <div className="main-content__container-warning warning-text" dangerouslySetInnerHTML={{ __html: data.content_warging }}/>
                     </div>
                 </div>
             </>

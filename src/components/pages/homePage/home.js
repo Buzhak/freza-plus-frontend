@@ -1,6 +1,6 @@
-import "./home.scss";
+import "../pages.scss";
 
-import GetPage from "../base/getPage";
+import GetPage from "../../base/getPage";
 import React from "react";
 import contectsLogo from "./img/contacts_logo.jpg";
 import filesLogo from "./img/files_logo.jpg";
@@ -55,8 +55,10 @@ export default class Home extends GetPage{
                 </div>
                 <div className="main-content">
                     <div className="main-content__container">
-                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.description }}/>
-                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.extended_description }}/>
+                        <h2 className="main-content__container-title-main">{ data.content_main_title }</h2>
+                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.content_description }}/>
+                        <h3 className="main-content__container-title-sec">{ data.content_extended_title }</h3>
+                        <div className="main-content__container-description" dangerouslySetInnerHTML={{ __html: data.content_extended_description }}/>
                     </div>
                 </div>
             </>

@@ -1,16 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home, OrderPage, ServicePage } from '../pages/index';
 
 import ApiService from "../../services/service";
 import Base from '../base/base';
 import Footer from '../footer';
 import Header from "../header";
-import Home from "../home";
 import MaterialPage from "../materialPage";
-import PageContent from '../pageContent/pageContent';
 import React from "react";
-
-// import PageContent from '../pageContent';
-
 
 export default class App extends Base {
     
@@ -26,8 +22,12 @@ export default class App extends Base {
                 accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<Home id={route.id}/>}/>);
                 return accumulator;
             }
+            if (route.slug === 'order') {
+                accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<OrderPage id={route.id}/>}/>);
+                return accumulator;
+            }
             if (route.services && route.services.length !== 0) {
-                accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<PageContent id={route.id}/>}/>);
+                accumulator.push(<Route key={route.id} path={`/${route.slug}/`} element={<ServicePage id={route.id}/>}/>);
                 accumulator.push(<Route key={`a${route.id}`} path={`/${route.slug}/:id`} element={<MaterialPage/>}/>);
                 return accumulator;
             }

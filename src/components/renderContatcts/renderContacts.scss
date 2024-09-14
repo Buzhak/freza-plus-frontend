@@ -1,0 +1,25 @@
+.contact-item {
+    list-style-type: none;
+    line-height: 200%;
+    color: #595e81;
+    &__title,
+    &__phone,
+    &__email,
+    &__link {
+        margin-right: 10px;
+        display: inline;
+        text-decoration: none;
+        color: #595e81;
+    }
+    &__phone,
+    &__email {
+        cursor: pointer;
+        &:hover {
+            color: #db545a;
+            text-decoration: none;
+        }
+    }
+    &__link:hover {
+        color: #db545a;
+    }
+}

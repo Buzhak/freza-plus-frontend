@@ -19,36 +19,23 @@
         &-list {
             margin-bottom: 30px;
         }
-        &-item {
-            list-style-type: none;
-            line-height: 200%;
-            color: #595e81;
-            &-title,
-            &-phone,
-            &-email,
-            &-link {
-                margin-right: 10px;
-                display: inline;
-                text-decoration: none;
-                color: #595e81;
-            }
-            &-phone,
-            &-email {
-                cursor: pointer;
-                &:hover {
-                    color: #db545a;
-                    text-decoration: underline;
-                }
-            }
-            &-link:hover {
-                color: #db545a;
-            }
-
-        }
         &-info {
             color: #595e81;
             margin-bottom: 30px;
         }
+        &-item-link {
+            text-decoration: none;
+            color: #595e81;
+            &:hover {
+                color: #db545a;
+            }
+        }
+        &-list {
+            list-style-type: none;
+            padding: 0;
+            line-height: 2rem;
+        }
+    
     }   
 
     &__end {
@@ -66,4 +53,9 @@
         flex-direction: column;
         margin-left: 50px
     }
+}
+
+.warning-text {
+	margin-top: 20px;
+	background-color: rgb(245, 245, 235);
 }

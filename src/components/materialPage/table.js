@@ -9,7 +9,15 @@ const Table = (data) => {
         )
     }
     
-    const rows = table.map((row) => {
+    const rows = table.map((row, index) => {
+        if (index === 0) {
+            return(
+                <tr>
+                    <th>{row.thickness}</th>
+                    <th>{row.price}</th>
+                </tr>
+            )
+        }
             return(
                 <tr key={row.id}>
                     <td >{row.thickness}</td>
@@ -23,10 +31,6 @@ const Table = (data) => {
     return (
         <table className="container__info-table info-table">
             <tbody>
-                <tr>
-                    <th>Толщина материала, мм.</th>
-                    <th>Стоимость резки за 1 м.п., руб.</th>
-                </tr>
                 {rows}
             </tbody>
         </table>

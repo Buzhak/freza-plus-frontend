@@ -1,19 +1,8 @@
 import Base from "../base/base";
 import React from "react";
+import renderContacts from "../renderContatcts"
 
 export default class Address extends Base {
-    renderContacts = (contacts) => {
-        return contacts.map(({id, title, phone, email}) => {
-            return (
-                <li className="footer__services-item" key={id}>
-                    <p className="footer__services-item-title">{title}</p>
-                    <a className="footer__services-item-phone" href={`tel:${phone}`}>{phone}</a>
-                    <a className="footer__services-item-email" href={`mailto:${email}`}>{email}</a>
-                </li>    
-            )   
-        })
-    }
-
     render () {
         const { loading, error, data } = this.state;
 
@@ -25,7 +14,7 @@ export default class Address extends Base {
             return <p className="error">Error loading adresses</p>;
         }
         
-        const contacts = this.renderContacts(data)
+        const contacts = renderContacts(data)
         const address = data[0].address,
               workTime = data[0].workTime;
 
